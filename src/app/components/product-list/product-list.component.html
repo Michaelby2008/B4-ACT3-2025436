@@ -1,0 +1,7 @@
+<div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px;">
+  <h2>Catálogo de Productos</h2>
+  <div *ngFor="let product of products" style="margin-bottom: 10px;">
+    <span><strong>{{ product.name }}</strong> - {{ product.price | currency }}</span>
+    <button (click)="add(product)" style="margin-left: 10px;">Agregar al Carrito</button>
+  </div>
+</div>

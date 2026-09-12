@@ -1,1 +1,118 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  padding: 20px;
+}
+
+/* Encabezados */
+h1 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: #334155;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+/* Tarjetas contenedor */
+div[style*="border"] {
+  border: none !important;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px !important;
+  margin-bottom: 24px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Filas del catálogo de productos */
+div[style*="margin-bottom: 10px"] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background-color: #f8fafc;
+  border-radius: 6px;
+  margin-bottom: 8px !important;
+}
+
+/* Botones */
+button {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Botón eliminar */
+table button {
+  background-color: #ef4444;
+}
+
+table button:hover {
+  background-color: #dc2626;
+}
+
+/* Tabla del carrito */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  border: none !important;
+}
+
+th {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px;
+  font-size: 0.875rem;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+/* Input de cantidad */
+input[type="number"] {
+  padding: 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+}
+
+input[type="number"]:focus {
+  border-color: #2563eb;
+}
+
+/* Total final */
+h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: right;
+  color: #0f172a;
+}

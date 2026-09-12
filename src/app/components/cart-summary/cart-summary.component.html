@@ -1,0 +1,36 @@
+<div style="border: 1px solid #ccc; padding: 15px;">
+  <h2>Resumen del Carrito</h2>
+
+  <div *ngIf="(cartItems$ | async)?.length === 0">
+    <p>El carrito está vacío.</p>
+  </div>
+
+  <table *ngIf="(cartItems$ | async) as items" width="100%" border="1" style="border-collapse: collapse; text-align: left;">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Subtotal</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.product.name }}</td>
+        <td>{{ item.product.price | currency }}</td>
+        <td>
+          <input type="number" [value]="item.quantity" min="1" (change)="changeQuantity(item.product.id, $event)" style="width: 50px;" />
+        </td>
+        <td>{{ item.product.price | subtotal:item.quantity | currency }}</td>
+        <td>
+          <button (click)="remove(item.product.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 *ngIf="cartItems$ | async as items">
+    Total a pagar: {{ items | total | currency }}
+  </h3>
+</div>
